@@ -1,11 +1,8 @@
 package org.health.config;
 
-import org.health.dao.EmployeeDao;
-import org.health.dao.HorseDao;
-import org.health.dao.impl.EmployeeDaoImpl;
-import org.health.dao.impl.HorseDaoImpl;
-import org.health.entity.Employee;
-import org.health.entity.Horse;
+import org.health.dao.*;
+import org.health.dao.impl.*;
+import org.health.entity.*;
 import org.health.model.Dog;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,5 +26,35 @@ public class AppConfig {
     @Bean
     public EmployeeDao employeeDao(){
         return new EmployeeDaoImpl(Employee.class);
+    }
+
+    @Bean
+    public UserDao userDao() {
+        return new UserDaoImpl(User.class);
+    }
+
+    @Bean
+    public RoleDao roleDao() {
+        return new RoleDaoImpl(Role.class);
+    }
+
+    @Bean
+    public InspectionDao inspectionDao() {
+        return new InspectionDaoImpl(Inspection.class);
+    }
+
+    @Bean
+    public ResultExaminationDao resultExaminationDao() {
+        return new ResultExaminationDaoImpl(ResultExamination.class);
+    }
+
+    @Bean
+    public ExaminationDao examinationDaoDao() {
+        return new ExaminationDaoImpl(Examination.class);
+    }
+
+    @Bean
+    public MedicalCareDao medicalCareDao() {
+        return new MedicalCareDaoImpl(MedicalCare.class);
     }
 }
